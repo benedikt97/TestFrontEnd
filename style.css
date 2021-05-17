@@ -10,7 +10,7 @@
   --page-header-txtColor: #dde9f8;
   --page-header-headingColor: #7889a4;
   --page-header-width: 220px;
-  --page-content-bgColor: linear-gradient(to bottom, rgb(50, 0, 73), rgb(141, 4, 204)); /*#f0f1f6;*/
+  --page-content-bgColor: linear-gradient(to bottom, rgb(0, 73, 67), rgb(0, 189, 173)); /*#f0f1f6;*/
   --page-content-txtColor: #171616;
   --page-content-blockColor: rgba(255, 255, 255, 0.5);
   --white: #fff;
@@ -92,27 +92,6 @@ body {
   background: var(--page-header-bgColor);
 }
 
-/*In case you prefer an absolutely positioned header that covers the full page height, add these styles*/
-/*body {
-  position: relative;
-}
-
-.page-header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-}*/
-
-/*remove these styles*/
-/*.page-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow: auto;
-}*/
 
 .page-header nav {
   display: flex;
@@ -130,18 +109,7 @@ body {
   fill: var(--white);
 }
 
-.page-header .toggle-mob-menu {
-  display: none;
-  margin-left: 5px;
-  padding: 4px;
-  background: var(--page-content-blockColor);
-  border-radius: var(--border-radius);
-}
 
-.page-header .toggle-mob-menu svg {
-  fill: var(--black);
-  transition: transform 0.2s;
-}
 
 .page-header .admin-menu {
   display: flex;
@@ -231,12 +199,7 @@ body {
   grid-gap: 30px;
 }
 
-.page-content .grid button {
-  color:var(--white);
-  height: 30px;
-  background-color: var(--page-header-bgColor);
-  position:relative
-}
+
 
 .page-content .grid > article {
   height: 350px;
@@ -338,230 +301,20 @@ body {
   transform: scale(1.01, 1.01)
 }
 
-
-/* MQ RULES
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-@media screen and (max-width: 767px) {
-  .page-header,
-  .page-content {
-    position: static;
-    width: 100%;
-  }
-
-  .page-header {
-    padding: 10px;
-  }
-
-  .page-header nav {
-    flex-direction: row;
-  }
-
-  .page-header .logo {
-    margin: 0;
-    width: 83px;
-    height: 35px;
-  }
-
-  .page-header .logo svg {
-    width: 83px;
-    height: 35px;
-  }
-
-  .page-header .logo png {
-    width: 83px;
-    height: 35px;
-  }
-
-  .page-header .toggle-mob-menu {
-    display: block;
-  }
-
-  .page-header .admin-menu {
-    position: absolute;
-    left: 98px;
-    top: 57px;
-    margin-top: 0;
-    z-index: 2;
-    border-radius: var(--border-radius);
-    background: var(--page-header-bgColor);
-    visibility: hidden;
-    opacity: 0;
-    transform: scale(0.95);
-    transition: all 0.2s;
-  }
-
-  .page-header .admin-menu li:nth-last-child(2) {
-    margin-bottom: 12px;
-  }
-
-  .page-header .admin-menu li:last-child button,
-  .search-and-user .admin-profile .greeting {
-    display: none;
-  }
-
-  .page-content {
-    min-height: 0;
-    padding: 10px;
-  }
-
-  .page-content .grid {
-    grid-gap: 10px;
-  }
-
-
-@media screen and (max-width: 400px) {
-  .page-content .grid > article {
-    grid-column: 1 / -1;
-  }
+.page-content > section > article >  button {
+  color: var(--page-header-txtColor);
+  font-size: 20px;
+  font-weight: bold;
+  background-color: var(--page-header-bgColor);
+  height: 40px;
+  width: 120px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  
+  
+  
 }
 
-
-/* BODY CLASSES
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-.mob-menu-opened .toggle-mob-menu svg {
-  transform: rotate(180deg);
-}
-
-.mob-menu-opened .page-header .admin-menu {
-  transform: scale(1);
-  visibility: visible;
-  opacity: 1;
-}
-
-@media screen and (min-width: 768px) {
-  .collapsed .page-header {
-    width: 40px;
-  }
-
-  .collapsed .page-header .admin-menu li > * {
-    padding: 10px;
-  }
-
-  .collapsed .page-header .logo,
-  .collapsed .page-header .admin-menu span,
-  .collapsed .page-header .admin-menu .menu-heading {
-    display: none;
-  }
-
-  .collapsed .page-header .admin-menu svg {
-    margin-right: 0;
-  }
-
-  .collapsed .page-header .collapse-btn svg {
-    transform: rotate(180deg);
-  }
-
-  .collapsed .page-content {
-    left: 40px;
-    width: calc(100% - 40px);
-  }
-}
-
-
-/* SWITCH STYLES
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-.switch label {
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-column-gap: 10px;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.switch span:first-child {
-  position: relative;
-  width: 50px;
-  height: 26px;
-  border-radius: 15px;
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.4);
-  background: var(--switch-bgLightModeColor);
-  transition: all 0.3s;
-}
-
-.switch span:first-child::before,
-.switch span:first-child::after {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-}
-
-.switch span:first-child::before {
-  top: 1px;
-  left: 1px;
-  width: 24px;
-  height: 24px;
-  background: var(--white);
-  z-index: 1;
-  transition: transform 0.3s;
-}
-
-.switch span:first-child::after {
-  top: 50%;
-  right: 8px;
-  width: 10px;
-  height: 10px;
-  transform: translateY(-50%);
-  background: var(--switch-sunColor);
-  box-shadow: 0 0 4px 2px #ffdb1a;
-}
-
-.switch [type="checkbox"]:checked + label span:first-child {
-  background: var(--switch-bgDarkModeColor);
-}
-
-.switch [type="checkbox"]:focus + label span:first-child {
-  box-shadow: 0 3px 5px rgba(255, 255, 255, 0.25);
-}
-
-.switch [type="checkbox"]:checked + label span:first-child::before {
-  transform: translateX(24px);
-}
-
-.switch [type="checkbox"]:checked + label span:first-child::after {
-  left: 12px;
-  width: 15px;
-  height: 15px;
-  background: transparent;
-  box-shadow: -2px -5px 0 var(--switch-moonColor);
-  transform: translateY(-50%) rotate(-72deg);
-}
-
-
-/* LIGHT MODE STYLES
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-.light-mode {
-  --page-header-bgColor: #f1efec;
-  --page-header-bgColor-hover: #b9e4e0;
-  --page-header-txtColor: #2c303a;
-  --page-header-headingColor: #979595;
-  --page-content-bgColor: #fff;
-  --box-shadow: 0 0 10px -2px rgba(0, 0, 0, 0.25);
-}
-
-.light-mode .page-header .admin-menu a:hover,
-.light-mode .page-header .admin-menu a:focus,
-.light-mode .page-header .admin-menu button:hover,
-.light-mode .page-header .admin-menu button:focus {
-  color: var(--black);
-}
-
-.light-mode .page-header .logo svg,
-.light-mode .page-header .admin-menu a:hover svg,
-.light-mode .page-header .admin-menu a:focus svg,
-.light-mode .page-header .admin-menu button:hover svg,
-.light-mode .page-header .admin-menu button:focus svg {
-  fill: var(--black);
-}
-
-.light-mode .switch [type="checkbox"]:focus + label span:first-child {
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
-}
-
-@media screen and (max-width: 767px) {
-  .light-mode .search-and-user .admin-profile svg {
-    fill: var(--black);
-  }
-}
 
 
 /* FOOTER
