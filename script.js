@@ -65,6 +65,35 @@ switchInput.addEventListener("input", function () {
 });
 
 
-function TestFunction() {
-  document.getElementById("opcip").innerHTML = "Gude";
-}
+/*JQUERY Code */
+
+$(document).ready(function(){
+  
+  $("#btSettings").click(function(){
+    $("#LiveMonitor").hide();
+  });
+
+    $.ajax({
+      url: "/api/",
+      data: { c: 'getopcconfig'},
+      dataType: 'json',
+      success: function (data) {
+        $.each(data, function(key,value){
+          $("#opcconfiguration").append("<li>" +key +": " +value +"</li>");
+        });
+      }
+    })
+
+    $.ajax({
+      url: "/api/",
+      data: { c: 'getnodes'},
+      dataType: 'json',
+      success: function (data) {
+        $.each(data, function(key,value){
+          $("#watchednodes").append("<li>" +key +": " +value +"</li>");
+        });
+      }
+    })
+  
+  
+});
