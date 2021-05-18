@@ -61,15 +61,10 @@
       <rect x="11.84" y="9.87" width="2" height="5.93" transform="translate(-5.32 12.84) rotate(-45)" />
     </symbol>
   </svg>
+
   <header class="page-header">
     <nav>
-      <img src="logo.png">
-      
-      <button class="toggle-mob-menu" aria-expanded="false" aria-label="open menu">
-        <svg width="20" height="20" aria-hidden="true">
-          <use xlink:href="#down"></use>
-        </svg>
-      </button>
+      <img src="logo.png">  
       <ul class="admin-menu">
         <li class="menu-heading">
           <h3>Admin</h3>
@@ -77,7 +72,7 @@
         <li>
           <a href="#LiveMonitor">
             <svg>
-              <use xlink:href="#LiveMonitor"></use>
+              <use xlink:href="#collection"></use>
             </svg>
             <span>LiveMonitor</span>
           </a>
@@ -85,7 +80,7 @@
         <li>
           <a href="#Charts">
             <svg>
-              <use xlink:href="#Chart"></use>
+              <use xlink:href="#trends"></use>
             </svg>
             <span>Charts</span>
           </a>
@@ -93,15 +88,13 @@
         <li>
           <a href="#ServerLog">
             <svg>
-              <use xlink:href="#Log"></use>
+              <use xlink:href="#comments"></use>
             </svg>
             <span>ServerLog</span>
           </a>
         </li>
         
-        <li class="menu-heading">
-          <h3>Settings</h3>
-        </li>
+        
         <li>
           <a id="btSettings" href="#Settings">
             <svg>
@@ -110,24 +103,10 @@
             <span>Settings</span>
           </a>
         </li>
-        <li>
-          <div class="switch">
-            <input type="checkbox" id="mode" checked>
-            <label for="mode">
-              <span></span>
-              <span>Dark</span>
-            </label>
-          </div>
-          <button class="collapse-btn" aria-expanded="true" aria-label="collapse menu">
-            <svg aria-hidden="true">
-              <use xlink:href="#collapse"></use>
-            </svg>
-            <span>Collapse</span>
-          </button>
-        </li>
       </ul>
     </nav>
   </header>
+
 
   <section class="page-content">
 
@@ -137,6 +116,7 @@
         </article>
       <article>
         <h1>Placeholder: Machine Values/Diagramm</h1>
+        <ul ID="actmachinedata"></ul>
       </article>
       <article>
         <h1>Placeholder: Prozess Values/Diagramm</h1>
@@ -154,19 +134,19 @@
           <p>Charts</p>
         </article>
       <article>
-        <h1>Placeholder: Big Chart</h1>
+        <h1>Placeholder: Big Hallo Paul Chart</h1>
       </article>
       <article>
         <h1>Placeholder: Chart Setting</h1>
       </article>
     </section>
 
-    <section ID="ServerLog" class="grid">
+    <section ID="ServerLog" class="grid-log">
       <article class="gridcontent">
-          <p>ServerLog</p>
-        </article>
+          <p>ServerLog</p>  
+        </article> 
       <article>
-        
+        <ul ID="serverlog"></ul>
       </article>
     </section>
 
@@ -175,42 +155,29 @@
         <p>Settings</p>        
         </article>
       <article>
-        <ul id="opcconfiguration"></ul>
+        <ul id="opcconfiguration">
+          
+        </ul>
+        <button ID="btStartLipe">Start Lipe</button>
+        <button ID="btStopLipe">Stop Lipe</button>
+        <button ID="btDeleteLog">Delete Log</button>
       </article>
       <article>
-        <h2 id="opcip">Ueberwachte Nodes : </h2>
+        <h2 id="opcip">Observed Nodes : </h2>
         <ul id="watchednodes"></ul>
       </article>
-      <article></article>
-      <article></article>
+      <article>
+        <h2>Machine Informations</h2>
+        <ul ID="staticvalues"></ul>
+      </article>
+      <article>
+        <h2>Logs in Database</h2>
+        <ul ID="opclogs"></ul>
+      </article>
     </section>
     
   </section>
 
-<!--
-  <section class="settings-page-content">
-    <section ID="Settings" class="grid">
-      <article>
-        <p>Settings</p>        
-        </article>
-      <article>
-        <ul id="opcconfiguration"></ul>
-      </article>
-      <article>
-        <h2 id="opcip">Ueberwachte Nodes : </h2>
-        <ul id="watchednodes"></ul>
-      </article>
-      <article></article>
-      <article></article>
-    </section>
-    
-  </section>
 
--->
-  
-
-
-
-  
   <script src="jquery-3.6.0.min.js"></script>
   <script src="script.js"></script>

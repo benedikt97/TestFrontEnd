@@ -1,6 +1,6 @@
 
 
-/* RESET RULES
+/* Variables
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700&display=swap");
 
@@ -276,10 +276,24 @@ body {
 }
 
 .page-content .grid-log > article {
-  height: 300px;
+  height: 700px;
   background: var(--page-content-blockColor);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
+}
+
+.page-content .grid-log table {
+  color:rgb(0, 0, 0);
+  border-collapse: collapse;
+  width: 100%;
+  display: block;
+  overflow: auto;
+  height: 700px;
+}
+
+.page-content .grid-log table td{
+  border: 1px solid #ddd;
+  padding: 8px;
 }
 
 .page-content .grid-log > article:first-child {
